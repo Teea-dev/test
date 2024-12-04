@@ -1,0 +1,29 @@
+@import "index.scss";
+
+.wrapper {
+  background-color: rgb(255 255 255 / 2%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  .container {
+    display: flex;
+    align-items: center;
+    @include grow-with-vw("padding", 16px, 16px, "y");
+    @include grow-with-vw("gap", 0px, 190px);
+
+    .logo {
+      position: relative;
+      display: block;
+      @include grow-with-vw("width", 102px, 116px);
+      @include grow-with-vw("height", 37px, 42px);
+    }
+
+    .childComponent {
+      flex: 1;
+      @include desktop {
+      }
+    }
+  }
+}

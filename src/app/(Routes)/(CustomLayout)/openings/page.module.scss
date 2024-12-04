@@ -1,0 +1,39 @@
+@import "index.scss";
+
+.wrapper {
+  display: grid;
+  @include grow-with-vw("gap", 36px, 48px);
+  @include grow-with-vw("margin-top", 105px, 136px);
+  @include grow-with-vw("margin-bottom", 62px, 137px);
+  @include app-max-width(1550px);
+  .container {
+    .openingContainer {
+      display: grid;
+      @include grow-with-vw("gap", 24px, 32px);
+
+      h1 {
+        font-weight: 700;
+        @include grow-with-vw("font-size", 20px, 32px);
+        @include grow-with-vw("line-height", 26.04px, 41.66px);
+      }
+
+      .openingJobs {
+        display: grid;
+        @include grow-with-vw("gap", 16px);
+
+        .error {
+          color: red;
+          font-weight: 400;
+          @include grow-with-vw("font-size", 24px);
+          @include grow-with-vw("line-height", 31.25px);
+        }
+
+        .empty {
+          font-weight: 400;
+          @include grow-with-vw("font-size", 24px);
+          @include grow-with-vw("line-height", 31.25px);
+        }
+      }
+    }
+  }
+}

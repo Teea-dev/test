@@ -1,0 +1,72 @@
+@import "index.scss";
+
+.wrapper {
+  color: $white;
+  .container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    @include grow-with-vw("gap", 32px, 106px);
+    @include app-max-width;
+
+    .content {
+      display: grid;
+      align-items: center;
+      max-width: 486px;
+      @include grow-with-vw("gap", 16px, 32px);
+
+      h1 {
+        font-weight: 700;
+        @include grow-with-vw("font-size", 24px, 48px);
+        @include grow-with-vw("line-height", 26.4px, 57.6px);
+      }
+      p {
+        font-weight: 400;
+        @include grow-with-vw("font-size", 16px, 20px);
+        @include grow-with-vw("line-height", 20.83px, 26.04px);
+      }
+
+      .btn {
+        width: fit-content;
+      }
+      @include desktop {
+        order: 1;
+      }
+    }
+
+    .imgWrapper {
+      border-radius: 24px;
+      margin: auto;
+      border: 3px solid transparent;
+      border-radius: 9px;
+      transform: scale(0.3);
+      transform-origin: right bottom;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+      background: linear-gradient(black, black) padding-box,
+        linear-gradient(0deg, #f7c05b, #f46f2c, #f2340b) border-box;
+      @include grow-with-vw("padding", 12px, 28px);
+      @include grow-with-vw("width", 318px, 662.24px);
+      @include grow-with-vw("height", 214px, 433.54px);
+
+      span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        img {
+          border-radius: inherit;
+        }
+      }
+
+      @include desktop {
+        order: 2;
+        border-radius: 24px;
+      }
+    }
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

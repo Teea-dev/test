@@ -1,0 +1,57 @@
+@import "index.scss";
+
+.wrapper {
+  height: 100vh;
+  position: relative;
+  max-height: 1087px;
+  // background-image: linear-gradient(transparent, black 105%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 657px;
+    display: grid;
+    @include grow-with-vw("gap", 48px);
+
+    .content {
+      display: grid;
+      @include grow-with-vw("gap", 24px);
+      text-align: center;
+
+      h1 {
+        font-weight: 700;
+        @include grow-with-vw("font-size", 32px, 56px);
+        @include grow-with-vw("line-height", 41.66px, 61.6px);
+      }
+      p {
+        justify-self: center;
+        max-width: 527px;
+        font-weight: 400;
+        color: $grey-300;
+        @include grow-with-vw("font-size", 16px, 20px);
+        @include grow-with-vw("line-height", 20.83px, 30px);
+      }
+    }
+
+    .btn {
+      width: fit-content;
+      justify-self: center;
+    }
+  }
+
+  .videoBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    z-index: 1;
+  }
+}

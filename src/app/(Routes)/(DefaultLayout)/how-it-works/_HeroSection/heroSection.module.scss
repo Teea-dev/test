@@ -1,0 +1,37 @@
+@import "index.scss";
+
+.wrapper {
+  color: $white;
+  @include grow-with-vw("margin-top", 117px, 180px);
+  .container {
+    display: grid;
+    @include grow-with-vw("gap", 32px, 64px);
+
+    .content {
+      display: grid;
+      @include grow-with-vw("gap", 12px, 32px);
+      text-align: center;
+      max-width: 784px;
+      margin: auto;
+
+      h1 {
+        font-weight: 700;
+        @include grow-with-vw("font-size", 24px, 56px);
+        @include grow-with-vw("line-height", 31.35px, 54px);
+      }
+      p {
+        font-weight: 400;
+        @include grow-with-vw("font-size", 14px, 20px);
+        @include grow-with-vw("line-height", 18.23px, 30px);
+      }
+    }
+
+    .videoContainer {
+      position: relative;
+      border-radius: 16px;
+      margin: auto;
+      @include grow-with-vw("width", 320px, 1238px);
+      @include grow-with-vw("height", 196px, 711px);
+    }
+  }
+}

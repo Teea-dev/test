@@ -1,0 +1,73 @@
+@import "index.scss";
+
+.wrapper {
+  background-color: black;
+  color: white;
+
+  .container {
+    display: flex;
+    align-items: center;
+    max-width: 1029px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include grow-with-vw("gap", 60px, 120px);
+
+    .stats {
+      display: grid;
+      @include grow-with-vw("gap", 8px);
+      justify-items: center;
+
+      span {
+        position: relative;
+        border-radius: 50%;
+        display: block;
+        margin: 13% 0px;
+        @include grow-with-vw("width", 156px);
+        @include grow-with-vw("height", 156px);
+
+        img {
+          border-radius: 50%;
+        }
+        // &:before {
+        //   content: "";
+        //   position: absolute;
+        //   border-radius: inherit;
+        //   display: block;
+        //   border: 2px solid transparent;
+        //   width: 120%;
+        //   height: 120%;
+        //   left: -11%;
+        //   top: -13%;
+        // }
+
+        // &.imgEven:before {
+        //   background: linear-gradient(black, black) padding-box,
+        //     linear-gradient(to right bottom, #08aa58, #08a0aa) border-box;
+        // }
+
+        // &.imgOdd:before {
+        //   background: linear-gradient(black, black) padding-box,
+        //     linear-gradient(to right bottom, #f7c05b, #f46f2c, #f2340b)
+        //       border-box;
+        // }
+      }
+
+      h3 {
+        font-weight: 700;
+        @include grow-with-vw("font-size", 16px, 20.33px);
+        @include grow-with-vw("line-height", 20.83px, 26.46px);
+      }
+
+      p {
+        font-weight: 400;
+        @include grow-with-vw("font-size", 14px, 16.94px);
+        @include grow-with-vw("line-height", 18.23px, 22.05px);
+      }
+    }
+
+    @include clamp-screen(0px, 480px) {
+      flex-direction: column;
+    }
+  }
+}

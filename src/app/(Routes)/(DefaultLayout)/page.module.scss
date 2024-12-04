@@ -1,0 +1,8 @@
+@import "index.scss";
+
+.homeGrid {
+  display: flex;
+  flex-direction: column;
+  @include grow-with-vw("gap", 100px, 140px);
+  @include grow-with-vw("margin-bottom", 100px, 130px);
+}

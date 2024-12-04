@@ -1,0 +1,37 @@
+@import "index.scss";
+
+.wrapper {
+  overflow: hidden;
+  border-bottom: 2px solid #2d2d2d;
+
+  &:last-child {
+    border-bottom: none;
+  }
+  .faqQuestion {
+    all: unset;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    @include grow-with-vw("gap", 6px, 12px);
+    @include grow-with-vw("padding", 16px, 24px, "y");
+    @include grow-with-vw("padding", 12px, 24px, "x");
+
+    p {
+      @include grow-with-vw("font-size", 14px, 18px);
+      @include grow-with-vw("line-height", 18.23px, 23.44px);
+    }
+
+    svg {
+      @include grow-with-vw("width", 12px, 16px);
+      @include grow-with-vw("height", 12px, 16px);
+    }
+  }
+
+  .faqAnswer {
+    height: 0px;
+    color: $grey-300;
+    @include grow-with-vw("font-size", 14px, 18px);
+    @include grow-with-vw("line-height", 18.23px, 23.44px);
+    @include grow-with-vw("padding", 12px, 24px, "x");
+  }
+}

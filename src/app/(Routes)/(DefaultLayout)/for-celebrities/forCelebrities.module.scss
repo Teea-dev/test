@@ -1,0 +1,9 @@
+@import "index.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  @include grow-with-vw("gap", 100px, 140px);
+  @include grow-with-vw("margin-top", 117px, 214px);
+  @include grow-with-vw("margin-bottom", 100px, 130px);
+}

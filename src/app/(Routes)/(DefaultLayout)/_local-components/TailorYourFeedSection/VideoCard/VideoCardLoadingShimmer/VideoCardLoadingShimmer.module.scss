@@ -1,0 +1,18 @@
+@import "index.scss";
+@import "index.scss";
+
+.videoInfoWrapper {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  left: initial !important;
+  bottom: initial !important;
+
+  .videoInfoContainer {
+    border-radius: 6px;
+    overflow: hidden;
+    margin-left: auto;
+    @include grow-with-vw("height", 30px);
+    @include grow-with-vw("width", 100px);
+  }
+}

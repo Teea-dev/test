@@ -1,0 +1,11 @@
+@import "index.scss";
+
+.wrapper {
+  .container {
+    display: grid;
+
+    @include grow-with-vw("gap", 36px, 48px);
+    @include grow-with-vw("margin-top", 105px, 136px);
+    @include grow-with-vw("margin-bottom", 62px, 137px);
+  }
+}

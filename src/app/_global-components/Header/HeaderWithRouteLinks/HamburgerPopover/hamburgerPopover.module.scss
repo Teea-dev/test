@@ -1,0 +1,25 @@
+@import "index.scss";
+
+.hamburger {
+  cursor: pointer;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  @include grow-with-vh("row-gap", 7px);
+
+  span {
+    display: block;
+    background-color: white;
+    @include grow-with-vw("width", 42px);
+    @include grow-with-vh("height", 3px);
+
+    &:nth-of-type(2) {
+      transform-origin: right;
+      transform: scaleX(0.5);
+    }
+  }
+
+  @include screen-md {
+    display: none;
+  }
+}

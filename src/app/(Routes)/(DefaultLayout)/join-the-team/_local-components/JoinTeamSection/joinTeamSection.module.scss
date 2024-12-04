@@ -1,0 +1,92 @@
+@import "index.scss";
+
+.wrapper {
+  color: $white;
+  width: 100%;
+  .container {
+    display: grid;
+    text-align: center;
+    @include grow-with-vw("gap", 100px, 140px);
+    @include app-max-width(1090px);
+
+    .joinTeam {
+      background-color: $grey-400;
+      display: grid;
+      border-radius: 24px;
+      justify-content: center;
+      text-align: center;
+      @include grow-with-vw("gap", 12px);
+      @include grow-with-vw("padding", 32px, 48px);
+
+      div {
+        display: grid;
+        @include grow-with-vw("gap", 12px);
+
+        h2 {
+          font-weight: 700;
+          @include grow-with-vw("font-size", 24px, 32px);
+          @include grow-with-vw("line-height", 26.04px, 41.66px);
+        }
+
+        p {
+          font-weight: 400;
+          color: $grey-300;
+          @include grow-with-vw("font-size", 14px, 20px);
+          @include grow-with-vw("line-height", 18.23px, 26.04px);
+        }
+      }
+
+      .btn {
+        width: fit-content;
+        justify-self: center;
+      }
+    }
+
+    .workFrom {
+      min-width: 100%;
+      display: grid;
+      margin: auto;
+      @include grow-with-vw("gap", 48px);
+
+      .text {
+        display: grid;
+        @include grow-with-vw("gap", 12px);
+
+        h2 {
+          font-weight: 700;
+          @include grow-with-vw("font-size", 24px, 32px);
+          @include grow-with-vw("line-height", 26.04px, 41.66px);
+        }
+
+        p {
+          font-weight: 400;
+          color: $grey-300;
+          @include grow-with-vw("font-size", 14px, 20px);
+          @include grow-with-vw("line-height", 18.23px, 26.04px);
+        }
+      }
+
+      .imgs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include grow-with-vw("gap", 16px, 20px);
+
+        span {
+          display: block;
+          position: relative;
+          border-radius: 8px;
+          width: 100%;
+          @include grow-with-vw("height", 153px, 300px);
+
+          img {
+            border-radius: inherit;
+          }
+
+          @include desktop {
+            border-radius: 24px;
+          }
+        }
+      }
+    }
+  }
+}

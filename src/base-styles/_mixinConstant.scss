@@ -1,0 +1,158 @@
+// Maximum Width that wraps each section
+@mixin app-max-width($size: 1440px) {
+  max-width: $size;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Custom scrollbar
+@mixin custom-scrollbar(
+  $scrollbar-width: 8px,
+  $scrollbar-height: $scrollbar-width,
+  $track-border-radius: $scrollbar-width,
+  $thumb-border-radius: $scrollbar-width
+) {
+  /* width */
+  &::-webkit-scrollbar {
+    height: $scrollbar-height;
+    width: $scrollbar-width;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: $track-border-radius;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $grey-300;
+    border-radius: $thumb-border-radius;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $grey-200;
+  }
+}
+
+/* 
+Makes any css property Grows relative to the view port width and clamps it
+*/
+
+@mixin grow-with-vw(
+  $property,
+  $mobilePixel,
+  $desktopPixel: $mobilePixel,
+  $dimension: "default",
+  $important: ""
+) {
+  @if $dimension == "x" {
+    #{$property}-left: mobile-vw($mobilePixel) #{$important};
+    #{$property}-right: mobile-vw($mobilePixel) #{$important};
+  } @else if $dimension == "y" {
+    #{$property}-top: mobile-vw($mobilePixel) #{$important};
+    #{$property}-bottom: mobile-vw($mobilePixel) #{$important};
+  } @else {
+    #{$property}: mobile-vw($mobilePixel) #{$important};
+  }
+
+  @include clamp-screen($mobile-width, 800px) {
+    @if $dimension == "x" {
+      #{$property}-left: $mobilePixel #{$important};
+      #{$property}-right: $mobilePixel #{$important};
+    } @else if $dimension == "y" {
+      #{$property}-top: $mobilePixel #{$important};
+      #{$property}-bottom: $mobilePixel #{$important};
+    } @else {
+      #{$property}: $mobilePixel #{$important};
+    }
+  }
+
+  @include desktop {
+    @if $dimension == "x" {
+      #{$property}-left: desktop-vw($desktopPixel) #{$important};
+      #{$property}-right: desktop-vw($desktopPixel) #{$important};
+    } @else if $dimension == "y" {
+      #{$property}-top: desktop-vw($desktopPixel) #{$important};
+      #{$property}-bottom: desktop-vw($desktopPixel) #{$important};
+    } @else {
+      #{$property}: desktop-vw($desktopPixel) #{$important};
+    }
+  }
+
+  @include desktop($desktop-width + 1px) {
+    @if $dimension == "x" {
+      #{$property}-left: $desktopPixel #{$important};
+      #{$property}-right: $desktopPixel #{$important};
+    } @else if $dimension == "y" {
+      #{$property}-top: $desktopPixel #{$important};
+      #{$property}-bottom: $desktopPixel #{$important};
+    } @else {
+      #{$property}: $desktopPixel #{$important};
+    }
+  }
+}
+
+@mixin grow-with-vh(
+  $property,
+  $mobilePixel,
+  $desktopPixel: $mobilePixel,
+  $dimension: "default",
+  $important: ""
+) {
+  @if $dimension == "x" {
+    #{$property}-left: mobile-vh($mobilePixel) #{$important};
+    #{$property}-right: mobile-vh($mobilePixel) #{$important};
+  } @else if $dimension == "y" {
+    #{$property}-top: mobile-vh($mobilePixel) #{$important};
+    #{$property}-bottom: mobile-vh($mobilePixel) #{$important};
+  } @else {
+    #{$property}: mobile-vh($mobilePixel) #{$important};
+  }
+
+  @include clamp-screen($mobile-width, 800px) {
+    @if $dimension == "x" {
+      #{$property}-left: $mobilePixel #{$important};
+      #{$property}-right: $mobilePixel #{$important};
+    } @else if $dimension == "y" {
+      #{$property}-top: $mobilePixel #{$important};
+      #{$property}-bottom: $mobilePixel #{$important};
+    } @else {
+      #{$property}: $mobilePixel #{$important};
+    }
+  }
+
+  @include desktop {
+    @if $dimension == "x" {
+      #{$property}-left: desktop-vh($desktopPixel) #{$important};
+      #{$property}-right: desktop-vh($desktopPixel) #{$important};
+    } @else if $dimension == "y" {
+      #{$property}-top: desktop-vh($desktopPixel) #{$important};
+      #{$property}-bottom: desktop-vh($desktopPixel) #{$important};
+    } @else {
+      #{$property}: desktop-vh($desktopPixel) #{$important};
+    }
+  }
+
+  @include desktop($desktop-width + 1px) {
+    @if $dimension == "x" {
+      #{$property}-left: $desktopPixel #{$important};
+      #{$property}-right: $desktopPixel #{$important};
+    } @else if $dimension == "y" {
+      #{$property}-top: $desktopPixel #{$important};
+      #{$property}-bottom: $desktopPixel #{$important};
+    } @else {
+      #{$property}: $desktopPixel #{$important};
+    }
+  }
+}
+
+// Truncate Texts
+@mixin truncate-text($lineNum: 2) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lineNum; /* start showing ellipsis when 3rd line is reached */
+  white-space: pre-wrap; /* let the text wrap preserving spaces */
+}

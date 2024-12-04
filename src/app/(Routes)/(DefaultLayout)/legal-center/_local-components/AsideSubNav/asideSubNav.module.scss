@@ -1,0 +1,30 @@
+@import "index.scss";
+
+.subNavWrapper {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+
+  .recursiveContainer {
+    display: none;
+    background-color: $grey-500;
+    color: $grey-300;
+    border-radius: 24px;
+    @include grow-with-vw("padding", 32px);
+    @include grow-with-vw("padding-bottom", 263px);
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .mobileSelectbox {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    flex: 1 0 329px;
+  }
+}

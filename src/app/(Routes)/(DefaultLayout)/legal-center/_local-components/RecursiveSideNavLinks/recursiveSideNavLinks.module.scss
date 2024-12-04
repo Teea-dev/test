@@ -1,0 +1,8 @@
+@import "index.scss";
+
+.sideNavLinksWrapper {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  @include grow-with-vw("gap", 24px);
+}

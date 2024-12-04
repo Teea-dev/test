@@ -1,0 +1,49 @@
+@import "index.scss";
+
+.wrapper {
+  background-color: $black;
+  color: $white;
+  overflow: hidden;
+
+  .container {
+    display: grid;
+    @include grow-with-vw("gap", 24px, 48px);
+    @include app-max-width;
+
+    h2 {
+      text-align: center;
+      @include grow-with-vw("font-size", 20px, 32px);
+      @include grow-with-vw("line-height", 26.04px, 41.66px);
+    }
+
+    .testimonies {
+      display: flex;
+      align-items: center;
+      overflow: auto;
+      padding-bottom: 10px;
+      @include grow-with-vw("gap", 16px);
+      @include custom-scrollbar;
+
+      div {
+        min-width: 363px;
+        display: grid;
+        border-radius: 18px;
+        background-color: #252525;
+        text-transform: capitalize;
+        @include grow-with-vw("gap", 16px);
+        @include grow-with-vw("padding", 32px, 32px, "y");
+        @include grow-with-vw("padding", 24px, 24px, "x");
+        @include grow-with-vw("font-size", 14px, 16px);
+        @include grow-with-vw("line-height", 18.23px, 20.83px);
+        color: $white;
+
+        h3 {
+          color: $grey-300;
+        }
+        p {
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

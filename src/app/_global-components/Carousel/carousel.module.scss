@@ -1,0 +1,84 @@
+@import "index.scss";
+
+@mixin navArrowBtnsDefault {
+  all: unset;
+  display: none;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background-color: $grey-400;
+  fill: $white;
+  justify-content: center;
+  align-items: center;
+  transition: all 700ms ease-in-out;
+  cursor: pointer;
+  background-position: center;
+
+  &:hover {
+    fill: $grey-400;
+    background: $white radial-gradient(circle, transparent 1%, $white 1%)
+      center/15000%;
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.204);
+    background-size: 100%;
+    transition: background-color 0s;
+  }
+
+  &.navRight {
+    right: 2%;
+  }
+  &.navLeft {
+    left: 2%;
+  }
+
+  @include desktop {
+    display: flex;
+  }
+}
+
+.outerWrapper {
+  .outerNavArrows {
+    max-width: 1312px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include grow-with-vw("gap", 20px);
+    @include grow-with-vw("margin-bottom", 20px);
+
+    .navBtn {
+      @include navArrowBtnsDefault;
+    }
+  }
+  .wrapper {
+    max-width: 1312px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    @include custom-scrollbar;
+
+    ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      width: max-content;
+      @include grow-with-vw("gap", 12px, 22px);
+
+      .slideItem {
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .navBtn {
+      @include navArrowBtnsDefault;
+      position: absolute;
+      top: 50%;
+      translate: 0px -50%;
+    }
+  }
+}

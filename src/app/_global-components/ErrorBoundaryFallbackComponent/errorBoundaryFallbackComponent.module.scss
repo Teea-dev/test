@@ -1,0 +1,36 @@
+@import "index.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  @include grow-with-vw("gap", 10px);
+
+  &.longError {
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  h1 {
+    display: grid;
+    color: red;
+    @include grow-with-vw("font-size", 12px);
+    @include grow-with-vw("gap", 14px);
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    border-radius: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+
+    @include grow-with-vw("padding", 14px);
+    @include grow-with-vw("font-size", 14px);
+  }
+}

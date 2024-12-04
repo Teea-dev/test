@@ -1,0 +1,27 @@
+@import "index.scss";
+@import "index.scss";
+
+.videoInfoContainer {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  height: fit-content;
+
+  @include grow-with-vw("gap", 6px, 12px);
+  @include grow-with-vw("bottom", 12px, 16px);
+  @include grow-with-vw("left", 12px, 16px);
+
+  .imgShimmer {
+    border-radius: 50%;
+    overflow: hidden;
+    @include grow-with-vw("width", 30px, 37px);
+    @include grow-with-vw("height", 30px, 37px);
+  }
+
+  .vidContentShimmers {
+    overflow: hidden;
+    display: grid;
+    @include grow-with-vw("gap", 6px);
+    @include grow-with-vw("height", 40px);
+  }
+}

@@ -1,0 +1,27 @@
+@import "index.scss";
+
+.videoCard {
+  &::after {
+    background: none;
+  }
+
+  .videoInfoWrapper {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: fit-content;
+    left: initial;
+    bottom: initial;
+
+    .videoInfoContainer {
+      background-color: rgba(0, 0, 0, 0.401);
+      text-transform: capitalize;
+      border-radius: 6px;
+      width: fit-content;
+      @include grow-with-vw("padding", 6px, 8px, "y");
+      @include grow-with-vw("padding", 12px, 16px, "x");
+      @include grow-with-vw("font-size", 14px);
+      @include grow-with-vw("line-height", 15.62px);
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import "index.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $grey-400;
+  border-radius: 24px;
+  @include grow-with-vw("gap", 32px);
+  @include grow-with-vw("padding", 24px, 32px, "y");
+  @include grow-with-vw("padding", 16px, 48px, "x");
+
+  .jobDetails {
+    flex: 1;
+
+    h2 {
+      font-weight: 700;
+      @include grow-with-vw("font-size", 16px, 24px);
+      @include grow-with-vw("line-height", 20.83px, 31.25px);
+    }
+
+    p {
+      font-weight: 400;
+      color: $grey-300;
+      @include grow-with-vw("font-size", 14px, 16px);
+      @include grow-with-vw("line-height", 18.23px, 20.83px);
+      @include grow-with-vw("margin-top", 8px);
+      @include grow-with-vw("margin-bottom", 24px);
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      @include grow-with-vw("gap", 14px);
+
+      p {
+        color: $white;
+        display: flex;
+        align-items: center;
+        @include grow-with-vw("gap", 7px);
+        @include grow-with-vw("font-size", 14px, 16px);
+        @include grow-with-vw("line-height", 18.23px, 20.83px);
+
+        span {
+          text-transform: capitalize;
+        }
+
+        svg {
+          @include grow-with-vw("width", 18px);
+          @include grow-with-vw("height", 18px);
+        }
+      }
+    }
+  }
+
+  .applyBtn {
+    align-self: flex-end;
+    width: fit-content;
+
+    div {
+      display: flex;
+      align-items: center;
+      @include grow-with-vw("gap", 7px);
+
+      svg {
+        @include grow-with-vw("width", 14px);
+        @include grow-with-vw("height", 14px);
+      }
+    }
+
+    @include desktop {
+      align-self: center;
+    }
+  }
+
+  @include desktop {
+    flex-direction: row;
+  }
+}

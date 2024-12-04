@@ -1,0 +1,94 @@
+@import "index.scss";
+
+.wrapper {
+  color: $white;
+
+  .contentContainer {
+    background-color: $grey-500;
+    @include grow-with-vw("padding", 30px, 43px, "y");
+    .content {
+      display: grid;
+      align-items: flex-start;
+      @include grow-with-vw("gap", 48px, 184px);
+
+      .newsletter {
+        display: grid;
+        @include grow-with-vw("gap", 24px);
+        div {
+          display: grid;
+          @include grow-with-vw("gap", 6px);
+
+          h3 {
+            font-weight: 700;
+            @include grow-with-vw("font-size", 18px, 20px);
+            @include grow-with-vw("line-height", 23.44px, 26.04px);
+          }
+
+          p {
+            color: $grey-300;
+            font-weight: 400;
+            @include grow-with-vw("font-size", 14px, 16px);
+            @include grow-with-vw("line-height", 18.23px, 20.83px);
+          }
+        }
+      }
+
+      .navLinks {
+        display: flex;
+        flex-wrap: wrap;
+        @include grow-with-vw("row-gap", 16px);
+        @include grow-with-vw("column-gap", 48px);
+        div {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+
+          @include grow-with-vw("gap", 16px);
+
+          a {
+            color: $white;
+            width: fit-content;
+            font-weight: 400;
+            @include grow-with-vw("font-size", 14px, 16px);
+            @include grow-with-vw("line-height", 18.23px, 20.83px);
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        @include desktop {
+          flex-wrap: nowrap;
+          justify-content: center;
+        }
+      }
+
+      .socials {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include grow-with-vw("gap", 20px);
+
+        svg {
+          @include grow-with-vw("width", 18px);
+          @include grow-with-vw("height", 18px);
+        }
+      }
+
+      @include desktop {
+        grid-template-columns: 2fr 1.5fr 1fr;
+      }
+    }
+  }
+
+  .copyright {
+    background-color: transparent;
+    p {
+      font-weight: 500;
+      @include grow-with-vw("padding", 11px, 19px, "y");
+      @include grow-with-vw("font-size", 12px);
+      @include grow-with-vw("line-height", 15.62px);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "index.scss";
+
+.wrapper {
+  .container {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    border: 3px solid $grey-400;
+    border-radius: 12px;
+    cursor: pointer;
+    @include grow-with-vw("gap", 8px);
+    @include grow-with-vw("padding", 12px);
+
+    p {
+      @include grow-with-vw("font-size", 16px);
+      @include grow-with-vw("line-height", 20.83px);
+    }
+
+    svg {
+      @include grow-with-vw("width", 14px);
+      @include grow-with-vw("height", 14px);
+    }
+  }
+}

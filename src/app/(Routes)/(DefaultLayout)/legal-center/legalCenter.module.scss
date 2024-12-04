@@ -1,0 +1,77 @@
+@import "index.scss";
+
+.wrapper {
+  color: $white;
+  @include grow-with-vw("margin-top", 117px, 138px);
+  @include grow-with-vw("margin-bottom", 100px, 336px);
+  .container {
+    display: grid;
+    @include grow-with-vw("gap", 100px);
+
+    .heading {
+      display: grid;
+      @include grow-with-vw("gap", 12px, 32px);
+      text-align: center;
+      max-width: 784px;
+      margin: auto;
+
+      h1 {
+        font-weight: 700;
+        @include grow-with-vw("font-size", 24px, 56px);
+        @include grow-with-vw("line-height", 31.35px, 54px);
+      }
+      p {
+        font-weight: 400;
+        @include grow-with-vw("font-size", 14px, 20px);
+        @include grow-with-vw("line-height", 18.23px, 30px);
+      }
+    }
+
+    .navLinks {
+      max-width: 1090px;
+      margin: auto;
+      display: grid;
+      @include grow-with-vw("gap", 16px, 24px);
+
+      a {
+        display: grid;
+        background-color: $grey-400;
+        border-radius: 18px;
+        color: inherit;
+        @include grow-with-vw("gap", 12px, 16px);
+        @include grow-with-vw("padding", 16px, 32px, "x");
+        @include grow-with-vw("padding", 24px, 32px, "y");
+
+        &:hover {
+          background-color: #2d2d2d;
+        }
+
+        h3 {
+          font-weight: 700;
+          @include grow-with-vw("font-size", 16px, 20px);
+          @include grow-with-vw("line-height", 20.83px, 26.04px);
+        }
+
+        p {
+          font-weight: 400;
+          color: $grey-300;
+          @include grow-with-vw("font-size", 14px, 16px);
+          @include grow-with-vw("line-height", 18.23px, 20.83px);
+        }
+
+        svg {
+          @include grow-with-vw("width", 18px, 24px);
+          @include grow-with-vw("height", 18px, 24px);
+        }
+
+        @include desktop {
+          border-radius: 24px;
+        }
+      }
+
+      @include desktop {
+        grid-template-columns: auto auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "index.scss";
+
+.videoInfoContainer {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  height: fit-content;
+
+  @include grow-with-vw("gap", 6px);
+
+  > div {
+    display: flex;
+    color: $white;
+    align-items: center;
+    @include grow-with-vw("gap", 6px);
+
+    h3 {
+      font-weight: 700;
+      @include grow-with-vw("font-size", 12px, 18px);
+      @include grow-with-vw("line-height", 15.52px, 23.44px);
+    }
+
+    svg {
+      @include grow-with-vw("width", 12px, 18px);
+      @include grow-with-vw("height", 12px, 18px);
+    }
+  }
+  p {
+    font-weight: 400;
+    color: $grey-300;
+    @include grow-with-vw("font-size", 10px, 14px);
+    @include grow-with-vw("line-height", 13px, 18.23px);
+    @include truncate-text;
+  }
+}

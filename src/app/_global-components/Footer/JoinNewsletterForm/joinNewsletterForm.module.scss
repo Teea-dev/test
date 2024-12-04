@@ -1,0 +1,26 @@
+@import "index.scss";
+
+.wrapper {
+  display: grid;
+  @include grow-with-vw("gap", 24px);
+
+  div {
+    input {
+      flex: 1;
+      border: 2px solid #2d2d2d;
+      outline: none;
+      border-radius: 4px;
+      color: $white;
+      background-color: transparent;
+      transition: all 450ms ease-in-out;
+      @include grow-with-vw("font-size", 14px, 16px);
+      @include grow-with-vw("line-height", 18.23px, 20.83px);
+      @include grow-with-vw("padding", 14px, 20px, "y");
+      @include grow-with-vw("padding", 12px, 24px, "x");
+
+      &:focus {
+        box-shadow: 0 0 0 2px white;
+      }
+    }
+  }
+}

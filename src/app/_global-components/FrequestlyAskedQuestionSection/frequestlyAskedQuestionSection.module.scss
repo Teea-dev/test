@@ -1,0 +1,26 @@
+@import "index.scss";
+
+.wrapper {
+  color: $white;
+
+  .container {
+    max-width: 1090px;
+    margin: auto;
+    display: grid;
+    @include grow-with-vw("gap", 24px, 48px);
+
+    h2 {
+      text-align: center;
+      font-weight: 700;
+      @include grow-with-vw("font-size", 20px, 32px);
+      @include grow-with-vw("line-height", 26.04px, 41.66px);
+    }
+
+    .faqQuestions {
+      list-style: none;
+      display: grid;
+      background-color: $grey-400;
+      border-radius: 24px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "index.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $grey-300;
+
+  svg {
+    @include grow-with-vw("width", 30px);
+    @include grow-with-vw("height", 30px);
+  }
+}

@@ -1,0 +1,72 @@
+@import "index.scss";
+
+.wrapper {
+  .container {
+    display: grid;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    justify-items: center;
+    @include grow-with-vw("gap", 116px);
+
+    .imgWrappper {
+      position: relative;
+      display: block;
+      border-radius: 12px;
+      @include grow-with-vw("width", 300px, 500px);
+      @include grow-with-vw("height", 320px, 720px);
+
+      img {
+        border-radius: inherit;
+      }
+    }
+
+    .content {
+      display: grid;
+      @include grow-with-vw("gap", 24px);
+
+      .texts {
+        display: grid;
+        @include grow-with-vw("gap", 16px);
+
+        h3 {
+          font-weight: 700;
+          @include grow-with-vw("font-size", 24px);
+          @include grow-with-vw("line-height", 31.25px);
+        }
+
+        p {
+          font-weight: 400;
+          @include grow-with-vw("font-size", 20px);
+          @include grow-with-vw("line-height", 26.04px);
+        }
+      }
+
+      .btnLink {
+        width: fit-content;
+      }
+    }
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+
+      &.Even {
+        .imgWrappper {
+          order: 1;
+        }
+        .content {
+          order: 2;
+        }
+      }
+
+      &.Odd {
+        .imgWrappper {
+          order: 2;
+        }
+        .content {
+          order: 1;
+        }
+      }
+    }
+  }
+}

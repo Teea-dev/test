@@ -1,0 +1,116 @@
+@import "index.scss";
+
+.wrapper {
+  color: $white;
+
+  .container {
+    background: linear-gradient(156deg, #08aa58, #3bd086, #08a0aa 85%);
+    display: grid;
+    overflow: hidden;
+    @include grow-with-vw("gap", 120px);
+    @include grow-with-vw("padding", 24px, 91px, "x");
+    @include grow-with-vw("padding", 24px, 0px, "y");
+    @include grow-with-vw("border-radius", 18px, 24px);
+    @include app-max-width;
+
+    .details {
+      display: grid;
+      @include grow-with-vw("gap", 24px, 32px);
+      max-width: 543px;
+      align-content: center;
+
+      .heading {
+        display: grid;
+        @include grow-with-vw("gap", 6px, 12px);
+
+        h2 {
+          font-weight: 700;
+          @include grow-with-vw("font-size", 20px, 40px);
+          @include grow-with-vw("line-height", 26.04px, 52.08px);
+        }
+
+        p {
+          font-weight: 500;
+          @include grow-with-vw("font-size", 16px, 20px);
+          @include grow-with-vw("line-height", 20.83px, 26.04px);
+        }
+      }
+      .appStores {
+        display: flex;
+        align-items: center;
+        @include grow-with-vw("gap", 16px);
+        span {
+          position: relative;
+          display: block;
+          @include grow-with-vw("width", 130px, 178px);
+          @include grow-with-vw("height", 41px, 51px);
+
+          img {
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+
+    .decors {
+      position: relative;
+      width: 100%;
+      display: none;
+      transform: translateY(40px);
+      justify-self: end;
+      height: 435px;
+
+      @include grow-with-vw("height", 435px);
+
+      .decor {
+        position: absolute;
+        bottom: 0px;
+        right: 20%;
+        display: block;
+        transform-origin: center bottom;
+        height: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        @include grow-with-vw("width", 230px);
+
+        &:nth-of-type(1) {
+          z-index: 5;
+          // transform: translate(0px, 8%);
+        }
+        &:nth-of-type(2) {
+          z-index: 4;
+          // rotate: -8deg;
+          // translate: -5% 15%;
+        }
+        &:nth-of-type(3) {
+          z-index: 3;
+          // rotate: -16deg;
+          // translate: -10% 22%;
+        }
+        &:nth-of-type(4) {
+          z-index: 2;
+          // rotate: -30deg;
+          // translate: 0% 27%;
+        }
+        &:nth-of-type(5) {
+          z-index: 1;
+          // rotate: -40deg;
+          // translate: 10% 33%;
+        }
+
+        img {
+          border-radius: inherit;
+          height: auto !important;
+        }
+      }
+
+      @include desktop {
+        display: block;
+      }
+    }
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import "index.scss";
+
+.wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: mobile-vw(24px);
+  padding-right: mobile-vw(24px);
+  @include grow-with-vw("gap", 0px, 32px);
+
+  .navLink {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 100%;
+    border-bottom: 1px solid $grey-300;
+    cursor: pointer;
+    @include grow-with-vw("font-size", 18px);
+    @include grow-with-vw("padding", 21px, 0px, "y");
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include desktop {
+      border: none;
+      display: block;
+      width: fit-content;
+      position: relative;
+
+      svg {
+        display: none;
+      }
+    }
+  }
+
+  .navLinkSlider {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    border-radius: 4px;
+    bottom: -12px;
+    background-color: white;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  @include desktop {
+    align-items: center;
+    flex-direction: row;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

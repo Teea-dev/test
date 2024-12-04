@@ -1,0 +1,30 @@
+@import "index.scss";
+
+.wrapper {
+  background-color: $black;
+  color: $white;
+  overflow: hidden;
+
+  .heading {
+    max-width: 909px;
+    margin: auto;
+    text-align: center;
+    display: grid;
+    @include grow-with-vw("margin-bottom", 24px, 48px);
+    @include grow-with-vw("gap", 6px, 12px);
+
+    h3 {
+      color: $white;
+      font-weight: 700;
+      @include grow-with-vw("font-size", 20px, 32px);
+      @include grow-with-vw("line-height", 26.04px, 41.66px);
+    }
+
+    p {
+      color: $grey-300;
+      font-weight: 400;
+      @include grow-with-vw("font-size", 16px, 20px);
+      @include grow-with-vw("line-height", 20.83px, 26.04px);
+    }
+  }
+}

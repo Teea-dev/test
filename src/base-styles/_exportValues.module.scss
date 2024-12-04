@@ -1,0 +1,7 @@
+@import "./colors";
+
+// This file export any scss variable i needed in any js file
+
+:export {
+  primary: $primary-color;
+}
